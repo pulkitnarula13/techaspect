@@ -1,0 +1,234 @@
+#include <iostream>
+
+
+using namespace std;
+
+class plan
+{
+    private:
+    char fnum;
+    char aname;
+    char des;
+    char source;
+    char depd;
+    char dept;
+    char ard;
+    char art;
+    char price;
+
+    public:
+    void add_data();
+    void view_data();
+    void filter_destination();
+    void filter_source();
+    void filter_price();
+    
+};
+
+/*void plan:add_data();
+{
+    cout<<"Enter Flight number: ";
+    cin>>fnum;
+    cout<<"\nEnter Airlines name: ";
+    cin>>aname;
+    cout<<"\nEnter Destination: ";
+    cin>>des;
+    cout<<"\nEnter Departure date: ";
+    cin>>depd;
+    cout<<"\nEnter Departure time: ";
+    cin>>dept;
+    cout<<"\nEnter Arrival date: ";
+    cin>>ard;
+    cout<<"Enter Arrival time: ";
+    cin>>art;
+    cout<<"\nEnter Price: ";
+    cin>>price;
+    
+}
+*/
+void plan::add_data()
+{
+char arr[20][8];
+
+
+
+for(int i=0; i<=20; i++)
+{
+    for(int j=0; j<=8; j++)
+    {
+        if(j==0)
+        {
+             cout<<"Enter Flight number: ";
+             cin>>fnum;
+             arr[i][j]=fnum;
+        }
+        
+        else if(j==1)
+        {
+                cout<<"Enter Airlines name: ";
+                cin>>aname;
+                arr[i][j]=aname; 
+        }
+        else if(j==2)
+        {
+            cout<<"Enter Destination";
+            cin>>des;
+            arr[i][j]=des;
+        }
+        else if(j==3)
+        {
+            cout<<"Enter Source";
+            cin>>source;
+            arr[i][j]=source;
+        }
+        else if(j==4)
+        {
+            cout<<"Enter Departure date";
+            cin>>depd;
+            arr[i][j]=depd;
+        }
+        else if(j==4)
+        {
+            cout<<"Enter Departure time";
+            cin>>dept;
+            arr[i][j]=dept;
+        }
+        else if(j==5)
+        {
+            cout<<"Enter Arrival date";
+            cin>>ard;
+            arr[i][j]=ard;
+        }
+        else if(j==6)
+        {
+            cout<<"Enter Arrival time";
+            cin>>art;
+            arr[i][j]=art;
+        }
+        else if(j==7)
+        {
+            cout<<"Enter Price";
+            cin>>price;
+            arr[i][j]=price;
+        }
+    }
+}
+
+void plan::view_data();
+{
+    for(int i=0; i<=10; i++)
+    {
+        for(int j=0; j<=7; j++){
+        cout<<arr[i][j]<<"\t";    
+        }
+        cout<<"\n";
+        
+    }
+    
+}
+
+void plan::filter_destination()
+{
+    char destination;
+    cout<<"\nEnter Destination";
+    cin>>destination;
+    for(int i=0; i<=10; i++)
+    {
+        for (int j=2)
+        {
+            if (arr[i][j]==destination)
+            { cout<<a[i][1]<<"\t"<<a[i][2]<<a[i][3]<<"\t"<<a[i][4]<<a[i][5]<<"\t"<<a[i][6]<<a[i][7];
+            break;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+}
+
+void plan::filter_source()
+{
+    char sc;
+    cout<<"\nEnter Source";
+    cin>>sc;
+    for(int i=0; i<=10; i++)
+    {
+        for (int j=3)
+        {
+            if (arr[i][j]==sc)
+            { cout<<a[i][1]<<"\t"<<a[i][2]<<a[i][3]<<"\t"<<a[i][4]<<a[i][5]<<"\t"<<a[i][6]<<a[i][7];
+            break;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+}
+
+void plan::filter_price()
+{
+    char cost;
+    cout<<"\nEnter price";
+    cin>>destination;
+    for(int i=0; i<=10; i++)
+    {
+        for (int j=7)
+        {
+            if (a[i][j]<=cost)
+            { cout<<arr[i][1]<<"\t"<<arr[i][2]<<arr[i][3]<<"\t"<<arr[i][4]<<arr[i][5]<<"\t"<<arr[i][6]<<arr[i][7];
+            break;
+            }
+            else
+            {
+                break;
+            }
+        }
+    }
+}
+
+
+int main()
+{
+    cout<<"\n WELCOME TO FLIGHT BOOKING";
+    cout<<"\n-------------------------------";
+    cout<<"\nChoose: ";
+    cout<<"\n 1. Add Data";
+    cout<<"\n 2. View";
+    cout<<"\n 3. Filter By Destination";
+    cout<<"\n 4. Filter By Source";
+    Cout<<"\n 5. Filter By Price";
+    cout<<"\n 6. Exit;"
+    int choice=0;
+    cout<<"\n\nEnter choice: ";
+    cin>>choice;
+    switch(6)
+    {
+    case 1:
+    add_data();
+    break;
+    case 2:
+    view_data();
+    break;
+    case 3;
+    filter_destination();
+    break;
+    case 4:
+    filter_source();
+    break;
+    case 5:
+    filter_price();
+    break;
+    case 6:
+    exit();
+    default:
+    cout<<"\nEnter correct number:";
+    break;
+    
+    }
+    
+    
+}
